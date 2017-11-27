@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 
 import Chart from './components/Chart';
 
-console.log(coin);
+
 if (typeof coin == "undefined") {
   ReactDOM.render(
       <Chart url="/get_price_data/bch" />,
