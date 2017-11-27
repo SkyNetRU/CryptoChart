@@ -1,0 +1,1 @@
+c:\openserver\modules\php\PHP-7.1-x64\php-win.exe artisan schedule:run 1>> NUL 2>&1
