@@ -14,7 +14,7 @@ class UpdateXRPPricesTable extends Migration
     public function up()
     {
         Schema::table('xrp_prices', function (Blueprint $table) {
-            $table->float('price', 8, 2);
+            $table->float('price', 8, 4);
             $table->char('fiat', 3);
             $table->integer('time');
             $table->unique('time');

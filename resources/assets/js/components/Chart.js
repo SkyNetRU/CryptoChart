@@ -18,9 +18,14 @@ class Chart extends Component {
       success: function(data) {
         var chartData = [];
         $(data).each(function() {
+          if (this.price < 10){
+            this.price = this.price.toFixed(4)
+          } else {
+            this.price = this.price.toFixed(2)
+          }
           chartData.push({
             'date': new Date((this.time * 1000)),
-            'value': this.price.toFixed(2)
+            'value': this.price
           });
         });
 

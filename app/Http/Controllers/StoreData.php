@@ -12,6 +12,7 @@ class StoreData extends Controller
         $crypts = array('btc', 'eth', 'bch', 'xrp', 'ltc');
         foreach ($crypts as $coin) {
             $uri = 'https://min-api.cryptocompare.com/data/histominute?fsym='.strtoupper($coin).'&tsym=USD&limit=5';
+            $seeds = array();
             $client = new Client(); //GuzzleHttp\Client
             $result = $client->get($uri);
             $prices = json_decode($result->getBody()->getContents());
