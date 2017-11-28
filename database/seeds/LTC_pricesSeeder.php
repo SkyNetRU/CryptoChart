@@ -16,6 +16,7 @@ class LTC_pricesSeeder extends Seeder
         $this->histoMinute();
         $this->histoHour();
         $this->histoDay();
+        $this->cutBegin();
 
     }
 
@@ -101,5 +102,9 @@ class LTC_pricesSeeder extends Seeder
 
         //Insert data
         LTC_Price::insertIgnore($seeds);
+    }
+
+    public function cutBegin () {
+        LTC_Price::orderBy('time')->take(1)->delete();
     }
 }

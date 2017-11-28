@@ -16,6 +16,7 @@ class XRP_pricesSeeder extends Seeder
         $this->histoMinute();
         $this->histoHour();
         $this->histoDay();
+        $this->cutBegin();
 
     }
 
@@ -101,5 +102,9 @@ class XRP_pricesSeeder extends Seeder
 
         //Insert data
         XRP_Price::insertIgnore($seeds);
+    }
+
+    public function cutBegin () {
+        XRP_Price::orderBy('time')->take(1)->delete();
     }
 }

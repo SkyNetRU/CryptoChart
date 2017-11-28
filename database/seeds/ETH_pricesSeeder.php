@@ -16,6 +16,7 @@ class ETH_pricesSeeder extends Seeder
         $this->histoMinute();
         $this->histoHour();
         $this->histoDay();
+        $this->cutBegin();
 
     }
 
@@ -101,5 +102,9 @@ class ETH_pricesSeeder extends Seeder
 
         //Insert data
         ETH_Price::insertIgnore($seeds);
+    }
+
+    public function cutBegin () {
+        ETH_Price::orderBy('time')->take(1)->delete();
     }
 }

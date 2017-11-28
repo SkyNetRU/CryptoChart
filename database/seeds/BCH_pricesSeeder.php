@@ -16,7 +16,7 @@ class BCH_pricesSeeder extends Seeder
         $this->histoMinute();
         $this->histoHour();
         $this->histoDay();
-
+        $this->cutBegin();
     }
 
     protected function histoMinute () {
@@ -101,5 +101,9 @@ class BCH_pricesSeeder extends Seeder
 
         //Insert data
         BCH_Price::insertIgnore($seeds);
+    }
+
+    public function cutBegin () {
+        BCH_Price::orderBy('time')->take(3)->delete();
     }
 }
