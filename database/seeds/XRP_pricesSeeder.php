@@ -106,6 +106,6 @@ class XRP_pricesSeeder extends Seeder
 
     public function cutBegin () {
         XRP_Price::orderBy('time')->take(1)->delete();
-        BCH_Price::orderBy('time', 'desc')->take(3)->delete();
+        XRP_Price::orderBy('time', 'desc')->take(3)->delete();
     }
 }
