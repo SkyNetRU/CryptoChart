@@ -105,5 +105,6 @@ class BCH_pricesSeeder extends Seeder
 
     public function cutBegin () {
         BCH_Price::orderBy('time')->take(3)->delete();
+        BCH_Price::orderBy('time', 'desc')->take(3)->delete();
     }
 }

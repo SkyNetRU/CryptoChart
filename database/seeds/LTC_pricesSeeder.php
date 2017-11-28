@@ -106,5 +106,6 @@ class LTC_pricesSeeder extends Seeder
 
     public function cutBegin () {
         LTC_Price::orderBy('time')->take(1)->delete();
+        BCH_Price::orderBy('time', 'desc')->take(3)->delete();
     }
 }
