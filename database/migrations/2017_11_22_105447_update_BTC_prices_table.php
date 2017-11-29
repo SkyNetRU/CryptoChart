@@ -14,7 +14,7 @@ class UpdateBTCPricesTable extends Migration
     public function up()
     {
         Schema::table('btc_prices', function (Blueprint $table) {
-            $table->float('price', 8, 4);
+            $table->float('price', 12, 4);
             $table->char('fiat', 3);
             $table->integer('time');
             $table->unique('time');
