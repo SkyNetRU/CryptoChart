@@ -7,6 +7,20 @@ chart of crypto currencies
 
 config env
 
+cd storage
+
+mkdir framework
+
+cd framework
+
+mkdir cache
+
+mkdir sessions
+
+mkdir views
+
+cd ../../
+ 
 composer install
 
 php artisan migrate
