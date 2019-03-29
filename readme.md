@@ -4,8 +4,11 @@ Laravel + React
 chart of crypto currencies
 
 ## Install manual
+cp .env.example .env
 
-config env
+add database connection credentials to .env
+
+php artisan key:generate
 
 cd storage
 
